@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kuangdong Zeng</title>
+  <title>曾匡栋</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --ink: #241433;
       --gold: #a68445;
-      --gold-soft: #e7d7b4;
       --paper: #fffcf8;
       --line: #ece4d6;
+      --muted: #5c4e63;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -23,7 +23,7 @@
         radial-gradient(900px 420px at 100% -10%, rgba(166, 132, 69, 0.16), transparent 60%),
         var(--paper);
       color: var(--ink);
-      font-family: Outfit, sans-serif;
+      font-family: Outfit, "PingFang SC", "Noto Sans SC", sans-serif;
       font-weight: 300;
     }
     .wrap { max-width: 980px; margin: 0 auto; padding: 28px 28px 96px; }
@@ -36,32 +36,32 @@
       border-bottom: 1px solid var(--line);
     }
     .mark {
-      letter-spacing: 0.28em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       font-size: 12px;
       color: var(--gold);
     }
-    nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+    nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
     nav a { color: var(--ink); text-decoration: none; font-size: 14px; }
     nav a:hover { color: var(--gold); }
-    header { padding: 72px 0 28px; }
+    header { padding: 72px 0 12px; }
     h1 {
       margin: 0;
-      font-family: "Cormorant Garamond", serif;
+      font-family: "Cormorant Garamond", "Songti SC", serif;
       font-weight: 500;
       font-size: clamp(56px, 8vw, 92px);
-      line-height: 0.9;
-      letter-spacing: -0.03em;
+      line-height: 0.95;
     }
-    .rule {
-      width: 72px;
-      height: 1px;
-      background: var(--gold);
-      margin: 28px 0;
+    .en {
+      margin: 10px 0 0;
+      color: var(--gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 13px;
     }
-    .lede { max-width: 560px; font-size: 18px; line-height: 1.7; }
-    .lede a { color: var(--gold); }
-    section { padding-top: 64px; }
+    .rule { width: 72px; height: 1px; background: var(--gold); margin: 28px 0; }
+    .lede { max-width: 640px; font-size: 18px; line-height: 1.8; }
+    section { padding-top: 56px; }
     .kicker {
       color: var(--gold);
       letter-spacing: 0.22em;
@@ -70,23 +70,22 @@
     }
     h2 {
       margin: 8px 0 28px;
-      font-family: "Cormorant Garamond", serif;
+      font-family: "Cormorant Garamond", "Songti SC", serif;
       font-size: 42px;
       font-weight: 500;
     }
     .grid { display: grid; gap: 16px; }
     article {
-      background: white;
+      background: #fff;
       border: 1px solid var(--line);
       border-left: 2px solid var(--gold);
       padding: 22px 24px;
     }
     article h3 { margin: 0 0 6px; font-size: 18px; font-weight: 500; }
-    article p { margin: 0; color: #5c4e63; line-height: 1.6; }
+    article p { margin: 0; color: var(--muted); line-height: 1.7; }
     .year { float: right; color: var(--gold); font-size: 13px; letter-spacing: 0.08em; }
     @media (max-width: 720px) {
       nav { flex-direction: column; align-items: flex-start; }
-      nav ul { flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -95,67 +94,64 @@
     <nav>
       <div class="mark">Tongji · Automation</div>
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#scholarships">Scholarships</a></li>
-        <li><a href="#competitions">Competitions</a></li>
-        <li><a href="#research">Research</a></li>
+        <li><a href="#about">自我介绍</a></li>
+        <li><a href="#scholarships">奖学金</a></li>
+        <li><a href="#competitions">竞赛</a></li>
+        <li><a href="#research">科研</a></li>
       </ul>
     </nav>
 
     <header id="about">
-      <h1>Alex Chen</h1>
+      <h1>曾匡栋</h1>
+      <p class="en">Kuangdong Zeng</p>
       <div class="rule"></div>
       <p class="lede">
-        I am an undergraduate student in Automation at Tongji University.
-        I work on computer vision and robot perception, with a focus on stereo matching:
-        estimating depth from a calibrated pair of cameras.
-        I am learning to train neural networks with PyTorch and to reproduce classic stereo papers.
+        同济大学自动化专业本科生，关注计算机视觉与机器人感知。目前在 MIAS 从事双目视觉研究，用校正后的双目图像估计场景深度，并用 PyTorch 训练和复现立体匹配模型。
       </p>
-      <p class="lede"><a href="mailto:you@example.com">you@example.com</a></p>
     </header>
 
     <section id="scholarships">
       <div class="kicker">01</div>
-      <h2>Scholarships</h2>
+      <h2>奖学金成果</h2>
       <div class="grid">
         <article>
           <span class="year">2025</span>
-          <h3>National Scholarship</h3>
-          <p>Awarded for academic standing in the top tier of the cohort. Replace this line with your own citation.</p>
-        </article>
-        <article>
-          <span class="year">2024</span>
-          <h3>First-Class Scholarship, Tongji University</h3>
-          <p>Annual undergraduate scholarship. Replace this entry before publishing.</p>
+          <h3>一等奖学金</h3>
+          <p>2025 年度一等奖。</p>
         </article>
       </div>
     </section>
 
     <section id="competitions">
       <div class="kicker">02</div>
-      <h2>Competitions</h2>
+      <h2>竞赛成果</h2>
       <div class="grid">
         <article>
-          <span class="year">2025</span>
-          <h3>China Robot Competition</h3>
-          <p>National award. Write the event name, award level, and your role here.</p>
+          <span class="year">2026</span>
+          <h3>大学生嵌入式芯片设计大赛</h3>
+          <p>国家一等奖。</p>
         </article>
         <article>
-          <span class="year">2024</span>
-          <h3>Intelligent Robot Creative Competition</h3>
-          <p>Team result. Replace with the real ranking and teammates.</p>
+          <span class="year">2025</span>
+          <h3>VEX 新生赛</h3>
+          <p>亚军。</p>
+        </article>
+        <article>
+          <span class="year">2025</span>
+          <h3>全国大学生数学建模竞赛</h3>
+          <p>参加国赛，未获奖。</p>
         </article>
       </div>
     </section>
 
     <section id="research">
       <div class="kicker">03</div>
-      <h2>Research</h2>
+      <h2>科研成果</h2>
       <div class="grid">
         <article>
-          <span class="year">2026</span>
-          <h3>Stereo matching</h3>
-          <p>Reproducing RAFT-Stereo and training binocular depth models in PyTorch. Add the paper title, venue, and authors when you have a result.</p>
+          <span class="year">MIAS</span>
+          <h3>双目视觉研究</h3>
+          <p>在 MIAS 开展双目视觉研究，从已校正的左右图像估计深度，并复现经典立体匹配模型。</p>
         </article>
       </div>
     </section>
