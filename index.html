@@ -26,7 +26,7 @@
       font-family: Outfit, "PingFang SC", "Noto Sans SC", sans-serif;
       font-weight: 300;
     }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 28px 96px; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 28px 28px 96px; }
     nav {
       display: flex;
       justify-content: space-between;
@@ -44,12 +44,26 @@
     nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
     nav a { color: var(--ink); text-decoration: none; font-size: 14px; }
     nav a:hover { color: var(--gold); }
-    header { padding: 72px 0 12px; }
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 48px;
+      align-items: center;
+      padding: 72px 0 12px;
+    }
+    .portrait {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      border: 1px solid var(--gold);
+      box-shadow: 0 0 0 7px #fff, 0 0 0 8px #e7d7b4;
+    }
     h1 {
       margin: 0;
       font-family: "Cormorant Garamond", "Songti SC", serif;
       font-weight: 500;
-      font-size: clamp(56px, 8vw, 92px);
+      font-size: clamp(48px, 6vw, 80px);
       line-height: 0.95;
     }
     .en {
@@ -86,6 +100,8 @@
     .year { float: right; color: var(--gold); font-size: 13px; letter-spacing: 0.08em; }
     @media (max-width: 720px) {
       nav { flex-direction: column; align-items: flex-start; }
+      header { grid-template-columns: 1fr; padding-top: 40px; }
+      .portrait { max-width: 280px; }
     }
   </style>
 </head>
@@ -102,12 +118,15 @@
     </nav>
 
     <header id="about">
-      <h1>曾匡栋</h1>
-      <p class="en">Kuangdong Zeng</p>
-      <div class="rule"></div>
-      <p class="lede">
-        同济大学自动化专业本科生，关注计算机视觉与机器人感知。目前在 MIAS 从事双目视觉研究，用校正后的双目图像估计场景深度，并用 PyTorch 训练和复现立体匹配模型。
-      </p>
+      <div>
+        <h1>曾匡栋</h1>
+        <p class="en">Kuangdong Zeng</p>
+        <div class="rule"></div>
+        <p class="lede">
+          同济大学自动化专业本科生，关注计算机视觉与机器人感知。目前在 MIAS 从事双目视觉研究，用校正后的双目图像估计场景深度，并用 PyTorch 训练和复现立体匹配模型。
+        </p>
+      </div>
+      <img class="portrait" src="portrait.jpg" alt="曾匡栋">
     </header>
 
     <section id="scholarships">
