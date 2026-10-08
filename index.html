@@ -4,35 +4,161 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alex Chen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --ink: #241433;
+      --gold: #a68445;
+      --gold-soft: #e7d7b4;
+      --paper: #fffcf8;
+      --line: #ece4d6;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Georgia, serif;
-      background: #f6f4ef;
-      color: #1c1c1c;
+      background:
+        radial-gradient(900px 420px at 100% -10%, rgba(166, 132, 69, 0.16), transparent 60%),
+        var(--paper);
+      color: var(--ink);
+      font-family: Outfit, sans-serif;
+      font-weight: 300;
     }
-    main {
-      max-width: 640px;
-      margin: 64px auto;
-      padding: 0 24px;
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 28px 96px; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
     }
-    h1 { font-weight: normal; font-size: 2rem; margin-bottom: 0.25rem; }
-    p.meta { color: #5c5c5c; margin-top: 0; }
-    a { color: #0b3d91; }
+    .mark {
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--gold);
+    }
+    nav ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+    nav a { color: var(--ink); text-decoration: none; font-size: 14px; }
+    nav a:hover { color: var(--gold); }
+    header { padding: 72px 0 28px; }
+    h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: clamp(56px, 8vw, 92px);
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+    }
+    .rule {
+      width: 72px;
+      height: 1px;
+      background: var(--gold);
+      margin: 28px 0;
+    }
+    .lede { max-width: 560px; font-size: 18px; line-height: 1.7; }
+    .lede a { color: var(--gold); }
+    section { padding-top: 64px; }
+    .kicker {
+      color: var(--gold);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    h2 {
+      margin: 8px 0 28px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 42px;
+      font-weight: 500;
+    }
+    .grid { display: grid; gap: 16px; }
+    article {
+      background: white;
+      border: 1px solid var(--line);
+      border-left: 2px solid var(--gold);
+      padding: 22px 24px;
+    }
+    article h3 { margin: 0 0 6px; font-size: 18px; font-weight: 500; }
+    article p { margin: 0; color: #5c4e63; line-height: 1.6; }
+    .year { float: right; color: var(--gold); font-size: 13px; letter-spacing: 0.08em; }
+    @media (max-width: 720px) {
+      nav { flex-direction: column; align-items: flex-start; }
+      nav ul { flex-wrap: wrap; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Alex Chen</h1>
-    <p class="meta">Undergraduate student in Automation, Tongji University</p>
-    <p>
-      I am an undergraduate student interested in computer vision and robot perception.
-      My current focus is stereo matching: estimating depth from a calibrated pair of cameras.
-    </p>
-    <p>
-      I am learning to train neural networks with PyTorch and to reproduce classic stereo papers.
-    </p>
-    <p><a href="mailto:you@example.com">you@example.com</a></p>
-  </main>
+  <div class="wrap">
+    <nav>
+      <div class="mark">Tongji · Automation</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#scholarships">Scholarships</a></li>
+        <li><a href="#competitions">Competitions</a></li>
+        <li><a href="#research">Research</a></li>
+      </ul>
+    </nav>
+
+    <header id="about">
+      <h1>Alex Chen</h1>
+      <div class="rule"></div>
+      <p class="lede">
+        I am an undergraduate student in Automation at Tongji University.
+        I work on computer vision and robot perception, with a focus on stereo matching:
+        estimating depth from a calibrated pair of cameras.
+        I am learning to train neural networks with PyTorch and to reproduce classic stereo papers.
+      </p>
+      <p class="lede"><a href="mailto:you@example.com">you@example.com</a></p>
+    </header>
+
+    <section id="scholarships">
+      <div class="kicker">01</div>
+      <h2>Scholarships</h2>
+      <div class="grid">
+        <article>
+          <span class="year">2025</span>
+          <h3>National Scholarship</h3>
+          <p>Awarded for academic standing in the top tier of the cohort. Replace this line with your own citation.</p>
+        </article>
+        <article>
+          <span class="year">2024</span>
+          <h3>First-Class Scholarship, Tongji University</h3>
+          <p>Annual undergraduate scholarship. Replace this entry before publishing.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="competitions">
+      <div class="kicker">02</div>
+      <h2>Competitions</h2>
+      <div class="grid">
+        <article>
+          <span class="year">2025</span>
+          <h3>China Robot Competition</h3>
+          <p>National award. Write the event name, award level, and your role here.</p>
+        </article>
+        <article>
+          <span class="year">2024</span>
+          <h3>Intelligent Robot Creative Competition</h3>
+          <p>Team result. Replace with the real ranking and teammates.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="kicker">03</div>
+      <h2>Research</h2>
+      <div class="grid">
+        <article>
+          <span class="year">2026</span>
+          <h3>Stereo matching</h3>
+          <p>Reproducing RAFT-Stereo and training binocular depth models in PyTorch. Add the paper title, venue, and authors when you have a result.</p>
+        </article>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
